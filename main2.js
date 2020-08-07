@@ -1,5 +1,3 @@
-// setup canvas
-
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -22,7 +20,6 @@ function Ball(x, y, velx, vely, color, size) {
   this.size = size;
 }
 
-// drawing the ball
 
 Ball.prototype.draw = function () {
   ctx.beginPath();
@@ -33,7 +30,7 @@ Ball.prototype.draw = function () {
 
 // Update the ball's data
 
-Ball.prototype.update = function() {
+Ball.prototype.update = function () {
   if ((this.x + this.size) >= width) {
     this.velX = -(this.velX);
   }
@@ -61,13 +58,13 @@ let balls = [];
 while (balls.length < 25) {
   let size = random(10,20);
   let ball = new Ball(
-    //ball position always drawn at least one ball width
-    //away from the edge of the canvas, to avoid drawing errors
+    //ball position alwasys drawn at least one ball width
+    //away from the edge of the canvas, to aviod drawing errors
     random(0 + size, width - size),
     random(0 + size, height - size),
     random(-7,7),
     random(-7,7),
-    "rgb(" + random(0,255) + "," + random(0,255) + "," + random(0,255) + ")",
+    'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) + ')',
     size
   );
 
@@ -75,7 +72,7 @@ while (balls.length < 25) {
 }
 
 function loop() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
   ctx.fillRect(0, 0, width, height);
 
   for (let i = 0; i < balls.length; i++) {
@@ -86,5 +83,4 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
-loop();
-
+loop(); 
