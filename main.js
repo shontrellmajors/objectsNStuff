@@ -13,11 +13,11 @@ function random(min, max) {
   return num;
 }
 
-function Ball(x, y, velx, vely, color, size) {
+function Ball(x, y, velX, velY, color, size) {
   this.x = x;
   this.y = y;
-  this.velx = velx;
-  this.vely = vely;
+  this.velX = velX;
+  this.velY = velY;
   this.color = color;
   this.size = size;
 }
